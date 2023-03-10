@@ -5,4 +5,4 @@ on:
       - "main"
 jobs:
   run-release:
-    uses: kjuulh/workflow-test-child/.github/workflows/ci.yml
+    uses: kjuulh/workflow-test-child/.github/workflows/ci.yml@main
