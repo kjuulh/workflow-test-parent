@@ -13,6 +13,4 @@ jobs:
       - id: plan
         run: echo "::setOutput plan::workflow-test-child"
   run-release:
-    needs:
-      - get_plan
-    uses: "kjuulh/${{ needs.get_plan.outputs.plan }}/.github/workflows/ci.yml@main"
+    uses: "kjuulh/workflow-test-child/.github/workflows/ci.yml@main"
