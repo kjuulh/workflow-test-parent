@@ -4,5 +4,13 @@ on:
     branches:
       - "main"
 jobs:
+  get_plan:
+    runs-on: ubuntu-latest
+    outputs:
+      plan: ${{ steps.plan.outputs.plan }}
+    steps:
+      - uses: actions/checkout@v3
+      - id: plan
+        run: echo "::setOutput plan::workflow-test-child"
   run-release:
-    uses: kjuulh/workflow-test-child/.github/workflows/ci.yml@main
+    uses: kjuulh/${{ needs.get_plan.outputs.plan }}/.github/workflows/ci.yml@main
