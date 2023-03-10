@@ -5,13 +5,4 @@ on:
       - "main"
 jobs:
   run-release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/checkout@v3
-        with:
-          repository: kjuulh/workflow-test-child
-          path: child
-      - run: ls ./child/.github/workflows
-      - name: child plan
-        uses: ./child/.github/workflows/ci.yml
+    uses: kjuulh/workflow-test-child/.github/workflows/ci.yml
