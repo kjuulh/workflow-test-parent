@@ -12,5 +12,6 @@ jobs:
         with:
           repository: kjuulh/workflow-test-child
           path: child
+      - run: ls ./child/.github/workflows
       - name: child plan
         uses: ./child/.github/workflows/ci.yml
